@@ -1,0 +1,66 @@
+:root {
+  --bg: #f4f5f8; --fg: #333; --card: #fff;
+  --accent: #4f46e5; --text-soft: #555;
+}
+body {
+  font-family: -apple-system, sans-serif;
+  background: var(--bg); color: var(--fg);
+  margin: 0; padding: 0;
+  transition: background .3s, color .3s;
+}
+body.dark {
+  --bg: #1e1e2f; --fg: #eee; --card: #2a2a3b; --text-soft: #ccc;
+}
+.site-header {
+  background: var(--accent); color: white;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5em; position: sticky; top: 0; z-index: 10;
+}
+#themeToggle { background: none; border: none; font-size: 1.5em; color: white; cursor: pointer; }
+.controls { padding: 1em 2em; background: var(--card); box-shadow: 0 2px 4px rgba(0,0,0,.05); position: sticky; top: 4.5em; z-index: 9; }
+.filter-group { display: flex; gap: 1em; flex-wrap: wrap; }
+.filter-group select, .filter-group input {
+  padding: .8em 1em; border: 1px solid #ccc;
+  border-radius: 8px; font-size: 1em;
+  background: var(--bg); color: var(--fg);
+  flex: 1 1 200px;
+}
+.search-wrapper { position: relative; flex: 2 1 auto; }
+.search-wrapper svg {
+  position: absolute; right: 1em; top: 50%; transform: translateY(-50%);
+  width: 1.2em; height: 1.2em; fill: var(--text-soft);
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 1em; margin: 1.5em 2em;
+}
+.stat-card {
+  background: var(--card); padding: 1.2em; border-radius: 12px;
+  text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+.charts { display: flex; flex-wrap: wrap; gap: 1em; margin: 1.5em 2em; }
+.charts canvas { background: var(--card); border-radius: 12px; padding: 1em; flex: 1 1 300px; }
+.case-list { margin: 1em 2em; }
+.case-card {
+  background: var(--card); padding: 1em; border-radius: 12px;
+  margin-bottom: 1em; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  transition: transform .2s;
+}
+.case-card:hover { transform: translateY(-4px); }
+.case-card h4 { display: flex; justify-content: space-between; align-items: center; }
+.case-card .status-badge {
+  padding: .2em .5em; border-radius: 6px;
+  font-size: .8em; color: white;
+}
+.badge-Open { background: #e53e3e; }
+.badge-Under\\ Review { background: #dd6b20; }
+.badge-Resolved { background: #38a169; }
+.case-card .black-report { background: black; color: white; font-weight: bold; padding: 2px 6px; border-radius: 4px; }
+footer { text-align: center; padding: 2em; }
+#exportBtn {
+  padding: 0.8em 1.5em; border: none;
+  background: var(--accent); color: white;
+  border-radius: 8px; font-size: 1.1em;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+}
