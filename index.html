@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SWM Internal Affairs – Analytics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>📊 Internal Affairs Analytics</h1>
+    <button id="themeToggle" aria-label="Toggle dark/light theme">🌙</button>
+  </header>
+  <section class="controls">
+    <div class="filter-group">
+      <select id="categoryFilter"><option>All Categories</option>...</select>
+      <select id="statusFilter"><option>All Statuses</option>...</select>
+      <div class="search-wrapper">
+        <input id="searchInput" placeholder="Search cases..." />
+        <svg><!-- magnifier icon --></svg>
+      </div>
+    </div>
+  </section>
+  <section class="stats-grid">
+    <div class="stat-card"><h3>Total Cases</h3><p id="totalCount"></p></div>
+    <div class="stat-card"><h3>Black Reports</h3><p id="blackCount"></p></div>
+  </section>
+  <section class="charts">
+    <canvas id="categoryChart"></canvas>
+    <canvas id="statusChart"></canvas>
+  </section>
+  <section id="caseList" class="case-list">
+    <!-- generated case cards -->
+  </section>
+  <footer>
+    <button id="exportBtn">Export Summary PDF</button>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
